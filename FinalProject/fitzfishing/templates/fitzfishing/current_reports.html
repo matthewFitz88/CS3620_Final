@@ -1,0 +1,38 @@
+{% extends 'fitzfishing/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Reports | FitzFishing</title>
+</head>
+<body>
+    {% block body %}
+        <h1 class="main-head">Current Reports</h1>
+        <hr class="current-line">
+        {% for report in reports_list %}
+        <div class="most-recent-container">
+            <div class="most-recent-col border">
+                <img src="{% static report.report_image %}" alt="" style="width: 720px; height: 340px;">
+                <h3 class="recent-head">{{ report.location_name }}</h3>
+                <h4 class="info-head">Conditions</h4>
+                <p class="info-text"><strong>Sky: </strong>{{ report.sky }}</p>
+                <p class="info-text"><strong>Tempurature: </strong>{{ report.temp }}</p>
+                <p class="info-text"><strong>Water Tempurature: </strong>{{ report.water_temp }}</p>
+                <h4 class="info-head">Best Lures/Bait</h4>
+                <p class="info-text"><strong>Best Lures/Bait: </strong>{{ report.lures }}</p>
+            </div>
+            <div class="most-recent-col2">
+                <h3 class="recent-head">Statistics</h3>
+                <p class="info-text"><strong>Fish Caught: </strong>{{ report.fish_caught }}</p>
+                <p class="info-text"><strong>Species Caught: </strong>{{ report.species_caught }}</p>
+                <p class="info-text"><strong>Hours Fished: </strong>{{ report.hours_fished }}</p>
+            </div>
+        </div>
+        <br>
+        {% endfor %}
+    {% endblock %}
+</body>
+</html>

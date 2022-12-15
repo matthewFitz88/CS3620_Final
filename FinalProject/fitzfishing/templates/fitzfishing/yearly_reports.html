@@ -1,0 +1,202 @@
+{% extends 'fitzfishing/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yearly Reports | FitzFishing</title>
+</head>
+<body>
+    {% block body %}
+        <h1 class="main-head">Yearly Reports</h1>
+        <hr class="yearly-line">
+        <div class="yearly-reports-container">
+            <div class="general-info">
+                <h2 class="sub-head general-head">General Information</h2>
+                <p class="info-text yearly-text">
+                    The Yearly Reports is all our data the we have gathered since 2018 broken down
+                    into years and then into each lake and pond specifically. Each year that is availible
+                    to you will give you the following information:
+                    <ul class="yearly-list">
+                        <li>Slideshow showing some of our best catches from that year</li>
+                        <li>Total fish caught for every month, season, and locations fished for that year</li>
+                        <li>Percentages of all fish caught for month, season, and location</li>
+                        <li>Rating breakdown</li>
+                        <li>Graphs showing all of the previously meantioned</li>
+                        <li>Links to all the locations fished during that year</li>
+                    </ul>
+                </p>
+                <h2 class="sub-head general-head">Ratings</h2>
+                <p class="info-text yearly-text">
+                    Each year is given a rating breakdown and all locations fished during each year 
+                    are given a rating as well. The ratings are broken into five different levels.
+                    Those being: slow, fair, average, good, and hot. This rating is based on the
+                    average fish caught pertrip during each year. 
+                </p>
+                <p class="info-text yearly-text">
+                    You will see that on each years page that the rating levels are given a number range. 
+                    The way we get these numbers is by using the average fish caught over all trips from 
+                    that year. The average rating will be set by the years average and then the fair and good 
+                    ratings are the next four numbers above or below the average and then the slow and hot 
+                    are any numbers above or below those. Below is an example of how this works using an 
+                    average of 10.
+                    <ul class="yearly-list">
+                        <li>Slow: 1-5</li>
+                        <li>Fair: 6-9</li>
+                        <li>Average: 10</li>
+                        <li>Good: 11-14</li>
+                        <li>Hot: 15+</li>
+                    </ul>   
+                </p>
+                <h2 class="sub-head general-head">Lake Data and Statistics</h2>
+                <p class="info-text yearly-text">
+                    At the bottom of every years page there will be lakes and ponds that you will
+                    be able to select from to see it's data and the stratigies that we used to
+                    catch fish there from that year. The first thing that will be on these pages
+                    is a table of when, how many, and what species of fish we caught for each
+                    trip during that year. There will also be the total, number of trips, average,
+                    and rating at the bottom of the tables. Below that there will be a table showing
+                    how many of each species we caught along with the percentages.   
+                </p>
+                <p class="info-text yearly-text">
+                    Below the tables will be the stratigies that we used to catch those fish at that
+                    location during that year. One thing to keep in mind is that the amount of information
+                    for each location will very depending on how many times we went and how successful we
+                    were at that location.   
+                </p>
+            </div>
+            <div class="quick-nav">
+                <h2 class="sub-head">Quick Navigate</h2>
+                <div class="quick-nav-links">
+                    <a class="quick-link" href="{% url '2018' %}">2018</a>
+                </div>
+                <hr>
+                <div class="quick-nav-links">
+                    <a class="quick-link" href="{% url 'adams2018' %}">Adams</a>
+                    <a class="quick-link" href="{% url 'east_canyon2018' %}">East Canyon</a>
+                    <a class="quick-link" href="{% url 'hobbs2018' %}">Hobbs</a>
+                    <a class="quick-link" href="{% url 'holmes2018' %}">Holmes</a>
+                    <a class="quick-link" href="{% url 'jensen2018' %}">Jensen</a>
+                    <a class="quick-link" href="{% url 'kaysville2018' %}">Kaysville</a>
+                    <a class="quick-link" href="{% url 'kens2018' %}">Kens</a>
+                    <a class="quick-link" href="{% url 'lost_creek2018' %}">Lost Creek</a>
+                    <a class="quick-link" href="{% url 'pineview2018' %}">Pineview</a>
+                    <a class="quick-link" href="{% url 'rockport2018' %}">Rockport</a>
+                    <a class="quick-link" href="{% url 'strawberry2018' %}">Strawberry</a>
+                    <a class="quick-link" href="{% url 'willard2018' %}">Willard</a>
+                </div>
+            </div>
+        </div>
+        <h2 class="sub-head">Select Year</h2>
+        <div class="year-nav-links">
+            <a class="year-link" href="{% url '2018' %}">2018</a>
+        </div>
+        <h2 class="sub-head">2022 Projections</h2>
+        <div class="month-projections">
+            <div class="months">
+                <p class="month-name">January</p><p class="month-projection">89</p>
+                <div class="month-bar1">
+                    <div class="month-bar2 jan-bar"><p class="bar-num jan-num">70</p></div>
+                </div>
+            </div>
+            <div class="months">
+                <p class="month-name">February</p><p class="month-projection">124</p>
+                <div class="month-bar1">
+                    <div class="month-bar2 feb-bar"><p class="bar-num feb-num">118</p></div>
+                </div>
+            </div>
+            <div class="months">
+                <p class="month-name">March</p><p class="month-projection">128</p>
+                <div class="month-bar1">
+                    <div class="month-bar2 march-bar"><p class="bar-num march-num">127</p></div>
+                </div>
+            </div>
+            <div class="months">
+                <p class="month-name">April</p><p class="month-projection">68</p>
+                <div class="month-bar1">
+                    <div class="month-bar2 april-bar"><p class="bar-num april-num">113</p></div>
+                </div>
+            </div>
+            <div class="months">
+                <p class="month-name">May</p><p class="month-projection">93</p>
+                <div class="month-bar1">
+                    <div class="month-bar2 may-bar"><p class="bar-num may-num">35</p></div>
+                </div>
+            </div>
+            <div class="months">
+                <p class="month-name">June</p><p class="month-projection">227</p>
+                <div class="month-bar1">
+                    <div class="month-bar2 june-bar"><p class="bar-num june-num">207</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="month-projections">
+            <div class="months">
+                <p class="month-name">July</p><p class="month-projection">285</p>
+                <div class="month-bar1">
+                    <div class="month-bar2 july-bar"><p class="bar-num july-num">472</p></div>
+                </div>
+            </div>
+            <div class="months">
+                <p class="month-name">August</p><p class="month-projection">193</p>
+                <div class="month-bar1">
+                    <div class="month-bar2 august-bar"><p class="bar-num august-num">362</p></div>
+                </div>
+            </div>
+            <div class="months">
+                <p class="month-name">September</p><p class="month-projection">160</p>
+                <div class="month-bar1">
+                    <div class="month-bar2 sept-bar"><p class="bar-num sept-num">40</p></div>
+                </div>
+            </div>
+            <div class="months">
+                <p class="month-name">October</p><p class="month-projection">274</p>
+                <div class="month-bar1">
+                    <div class="month-bar2 octo-bar"><p class="bar-num octo-num">172</p></div>
+                </div>
+            </div>
+            <div class="months">
+                <p class="month-name">November</p><p class="month-projection">119</p>
+                <div class="month-bar1">
+                    <div class="month-bar2 nov-bar"><p class="bar-num nov-num">14</p></div>
+                </div>
+            </div>
+            <div class="months">
+                <p class="month-name">December</p><p class="month-projection">18</p>
+                <div class="month-bar1">
+                    <div class="month-bar2 dec-bar"><p class="bar-num dec-num">0</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="season-projections">
+            <div class="spring-fall">
+                <p class="season-name">Spring</p><p class="season-projection">288</p>
+                <div class="season-bar1">
+                    <div class="season-bar2 spring-bar"><p class="bar-num spring-num">275</p></div>
+                </div>
+                <p class="season-name">Fall</p><p class="season-projection">691</p>
+                <div class="season-bar1">
+                    <div class="season-bar2 fall-bar"><p class="bar-num fall-num">226</p></div>
+                </div>
+            </div>
+            <div class="summer-winter">
+                <p class="season-name">Summer</p><p class="season-projection">705</p>
+                <div class="season-bar1">
+                    <div class="season-bar2 summer-bar"><p class="bar-num summer-num">1041</p></div>
+                </div>
+                <p class="season-name">Winter</p><p class="season-projection">188</p>
+                <div class="season-bar1">
+                    <div class="season-bar2 winter-bar"><p class="bar-num winter-num">188</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="year-projections">
+            <p class="year-name">2022</p><p class="year-projection">1872</p>
+            <div class="year-bar1">
+                <div class="year-bar2"><p class="bar-num year-num">1730</p></div>
+            </div>
+        </div>
+    {% endblock %}
+</body>
+</html>

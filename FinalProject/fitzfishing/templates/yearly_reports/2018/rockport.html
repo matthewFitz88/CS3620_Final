@@ -1,0 +1,77 @@
+{% extends 'fitzfishing/base2.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rockport Report | FitzFishing</title>
+</head>
+<body>
+    {% block body %}
+        <h1 class="main-head">Rockport Report 2018</h1>
+        <hr class="rockport-line">
+        <div class="lake-table-container">
+            <table class="lake-table">
+                <tr class="lake-table-row">
+                    <th class="name-col">Name</th>
+                    <th>January</th>
+                    <th>Fish Caught</th>
+                    <th>Species</th>
+                </tr>
+                {% for rockport in report_rockport %}
+                <tr class="lake-table-row">
+                    <td class="name-col">{{ rockport.location_name }}</td>
+                    <td>{{ rockport.date1 }}</td>
+                    <td>{{ rockport.fish_caught }}</td>
+                    <td>{{ rockport.species_caught }}</td>
+                </tr>
+                {% endfor %}
+                <tr class="total-rows lake-table-row">
+                    <td class="total-rows-name">Total</td>
+                    <td></td>
+                    <td>5</td>
+                    <td></td>
+                </tr>
+                <tr class="total-rows lake-table-row">
+                    <td class="total-rows-name">Number of Trips</td>
+                    <td></td>
+                    <td>2</td>
+                    <td></td>
+                </tr>
+                <tr class="total-rows lake-table-row">
+                    <td class="total-rows-name">Average</td>
+                    <td></td>
+                    <td>3</td>
+                    <td></td>
+                </tr>
+                <tr class="total-rows lake-table-row">
+                    <td class="total-rows-name">Rating</td>
+                    <td></td>
+                    <td class="rating-slow">Slow</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <div class="lake-stats-container">
+            <div class="lake-stats-col">
+                <table class="lake-stats-table">
+                    <tr>
+                        <th colspan="3" class="stats-table-head">Total and Percent Species Caught</th>
+                    </tr>
+                    <tr class="lake-table-row">
+                        <th>Species</th>
+                        <th>Total</th>
+                        <th>Percent</th>
+                    </tr>
+                    <tr class="lake-table-row">
+                        <td>Rainbow</td>
+                        <td>5</td>
+                        <td>100%</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    {% endblock %}
+</body>
+</html>

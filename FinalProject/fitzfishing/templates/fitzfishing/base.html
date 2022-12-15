@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>FitzFishing</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-items">
+            <a class="nav-link nav-border" href="{% url 'index' %}">Home</a>
+            <a class="nav-link nav-border" href="{% url 'current_reports' %}">Current Reports</a>
+            <a class="nav-link nav-border" href="{% url 'yearly_reports' %}">Yearly Reports</a>
+            <a class="nav-link nav-border" href="{% url 'overall_stats' %}">Overall Statistics</a>
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+        </div>
+    </nav>
+    {% block body %}
+    {% endblock %}
+    <footer>
+        <h2 class="sub-head">FitzFishing</h2>
+        <hr>
+        <div class="footer-links">
+            <div class="footer-links-col">
+                <h3 class="footer-head">Other Links</h3>
+                <hr class="other-links-line">
+                <p class="footer-link"><a href="https://dwrapps.utah.gov/fishing/fStart">Utah Fishing Report</a></p><br>
+                <p class="footer-link"><a href="https://dwrapps.utah.gov/fishstocking/Fish">Utah Fish Stocking Report</a></p>
+            </div>
+            <div class="footer-links-col">
+                <h3 class="footer-head">Navigation</h3>
+                <hr class="navigation-line">
+                <p class="footer-link"><a href="{% url 'index' %}">Home</a></p><br>
+                <p class="footer-link"><a href="{% url 'current_reports' %}">Current Reports</a></p><br>
+                <p class="footer-link"><a href="{% url 'yearly_reports' %}">Yearly Reports</a></p><br>
+                <p class="footer-link"><a href="{% url 'overall_stats' %}">Overall Statistics</a></p><br>
+                <p class="footer-link"><a href="{% url 'about' %}" class="footer-link">About</a></p>
+            </div>
+        </div>
+        <p class="posted-by">Data shown from Sept 16, 2017 - Dec 31, 2021 | Posted by: Matthew Fitzgerald</p>
+    </footer>
+</body>
+</html>

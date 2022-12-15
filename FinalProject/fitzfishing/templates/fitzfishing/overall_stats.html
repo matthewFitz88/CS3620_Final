@@ -1,0 +1,1256 @@
+{% extends 'fitzfishing/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/8541238091.js" crossorigin="anonymous"></script>
+    <title>Overall Statistics | FitzFishing</title>
+</head>
+<body>
+    {% block body %}
+        <form action="" method="GET">
+            <input type="text" name="lake_name" placeholder="Search Lake Name...">
+            <button class="search-button" type="submit">Search</button>
+        </form>
+        <h1 class="main-head">Overall Statistics</h1>
+        <hr class="overall-line">
+        {% for name in overall_name_list %}
+        {% if name.location_name == 'General Statistics' %}
+        <h2 class="sub-head">{{ name.location_name }}</h2>
+        <div class="overall-container">
+            <div class="overall-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th colspan="3" class="overall-table-head">Total and Percent Fish Caught</th>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Location</th>
+                        <th class="overall-table-sub-head">Total</th>
+                        <th class="overall-table-sub-head">Percentage</th>
+                    </tr>
+                    {% for lake in overall_lake_list %}
+                    <tr>
+                        <td>{{ lake.location_name }}</td>
+                        <td>{{ lake.total }}</td>
+                        <td>{{ lake.percent }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <table class="overall-tables">
+                    <tr>
+                        <th colspan="3" class="overall-table-head">Total and Percent Species Caught</th>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Species</th>
+                        <th class="overall-table-sub-head">Total</th>
+                        <th class="overall-table-sub-head">Percentage</th>
+                    </tr>
+                    {% for species in overall_species_list %}
+                    <tr>
+                        <td>{{ species.species_name }}</td>
+                        <td>{{ species.total }}</td>
+                        <td>{{ species.percent }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <table class="overall-tables" style="margin-top: 11.4rem;">
+                    <tr>
+                        <th colspan="3" class="overall-table-head">Overall Totals</th>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Fish Caught</th>
+                        <th class="overall-table-sub-head">Trips</th>
+                        <th class="overall-table-sub-head">Average</th>
+                    </tr>
+                    <tr>
+                        <td>7676</td>
+                        <td>379</td>
+                        <td>20</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="overall-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th colspan="3" class="overall-table-head">Total and Percent Caught per Month</th>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Month</th>
+                        <th class="overall-table-sub-head">Total</th>
+                        <th class="overall-table-sub-head">Percentage</th>
+                    </tr>
+                    {% for month in overall_month_list %}
+                    <tr>
+                        <td>{{ month.month_name }}</td>
+                        <td>{{ month.total }}</td>
+                        <td>{{ month.percent }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <table class="overall-tables">
+                    <tr>
+                        <th colspan="3" class="overall-table-head">Total and Percent Caught per Season</th>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Season</th>
+                        <th class="overall-table-sub-head">Total</th>
+                        <th class="overall-table-sub-head">Percentage</th>
+                    </tr>
+                    {% for season in overall_season_list %}
+                    <tr>
+                        <td>{{ season.season_name }}</td>
+                        <td>{{ season.total }}</td>
+                        <td>{{ season.percent }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <img src="{% static 'images/OverallImages/overall_fish.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;"><br>
+                <img src="{% static 'images/OverallImages/overall_month.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;"><br>
+                <img src="{% static 'images/OverallImages/overall_season.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;">
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% for name in overall_name_list %}
+        {% if name.location_name == 'Adams' %}
+        <h2 class="sub-head">{{ name.location_name }}</h2>
+        <div class="overall-container">
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th colspan="3" class="overall-table-head">Total and Percent Species Caught</th>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Species</th>
+                        <th class="overall-table-sub-head">Total</th>
+                        <th class="overall-table-sub-head">Percentage</th>
+                    </tr>
+                    <tr>
+                        <td>Blugill</td>
+                        <td>51</td>
+                        <td>7.34%</td>
+                    </tr>
+                    <tr>
+                        <td>Brook</td>
+                        <td>1</td>
+                        <td>0.14%</td>
+                    </tr>
+                    <tr>
+                        <td>Brown</td>
+                        <td>28</td>
+                        <td>4.03%</td>
+                    </tr>
+                    <tr>
+                        <td>Largemouth Bass</td>
+                        <td>2</td>
+                        <td>0.29%</td>
+                    </tr>
+                    <tr>
+                        <td>Rainbow</td>
+                        <td>606</td>
+                        <td>87.19%</td>
+                    </tr>
+                    <tr>
+                        <td>Wiper</td>
+                        <td>7</td>
+                        <td>1.01%</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Adams/adams_total.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;"><br>
+                <img src="{% static 'images/OverallImages/Adams/adams_avg.png' %}" alt="" style="width: 100%; height: 470px;">
+            </div>
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th class="overall-table-sub-head">Total</th>
+                        <td class="overall-totals">695</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Number of Trips</th>
+                        <td class="overall-totals">66</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Average</th>
+                        <td class="overall-totals">11</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Rating</th>
+                        <td class="rating-slow overall-totals">Slow</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Adams/adams_percent.png' %}" alt="" style="width: 100%; margin-bottom: 2rem; margin-top: 6rem;"><br>
+                <img src="{% static 'images/OverallImages/Adams/adams_yearly.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;">
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% for name in overall_name_list %}
+        {% if name.location_name == 'East Canyon' %}
+        <h2 class="sub-head">{{ name.location_name }}</h2>
+        <div class="overall-container">
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th colspan="3" class="overall-table-head">Total and Percent Species Caught</th>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Species</th>
+                        <th class="overall-table-sub-head">Total</th>
+                        <th class="overall-table-sub-head">Percentage</th>
+                    </tr>
+                    <tr>
+                        <td>Brown</td>
+                        <td>1</td>
+                        <td>0.31%</td>
+                    </tr>
+                    <tr>
+                        <td>Kokanee</td>
+                        <td>1</td>
+                        <td>0.31%</td>
+                    </tr>
+                    <tr>
+                        <td>Rainbow</td>
+                        <td>28</td>
+                        <td>99.07%</td>
+                    </tr>
+                    <tr>
+                        <td>Wiper</td>
+                        <td>1</td>
+                        <td>0.31%</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/EastCanyon/east_canyon_total.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;"><br>
+                <img src="{% static 'images/OverallImages/EastCanyon/east_canyon_avg.png' %}" alt="" style="width: 100%; height: 470px;">
+            </div>
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th class="overall-table-sub-head">Total</th>
+                        <td class="overall-totals">321</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Number of Trips</th>
+                        <td class="overall-totals">21</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Average</th>
+                        <td class="overall-totals">15</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Rating</th>
+                        <td class="rating-slow overall-totals">Slow</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/EastCanyon/east_canyon_percent.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;  margin-top: 5.5rem;"><br>
+                <img src="{% static 'images/OverallImages/EastCanyon/east_canyon_yearly.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;">
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% for name in overall_name_list %}
+        {% if name.location_name == 'Farmington' %}
+        <h2 class="sub-head">{{ name.location_name }}</h2>
+        <div class="overall-container">
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th colspan="3" class="overall-table-head">Total and Percent Species Caught</th>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Species</th>
+                        <th class="overall-table-sub-head">Total</th>
+                        <th class="overall-table-sub-head">Percentage</th>
+                    </tr>
+                        <td>Albino Rainbow</td>
+                        <td>1</td>
+                        <td>1.20%</td>
+                    </tr>
+                    <tr>
+                        <td>Rainbow</td>
+                        <td>82</td>
+                        <td>98.80%</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Farmington/farmington_total.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;"><br>
+                <img src="{% static 'images/OverallImages/Farmington/farmington_avg.png' %}" alt="" style="width: 100%; height: 470px;">
+            </div>
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th class="overall-table-sub-head">Total</th>
+                        <td class="overall-totals">83</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Number of Trips</th>
+                        <td class="overall-totals">7</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Average</th>
+                        <td class="overall-totals">13</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Rating</th>
+                        <td class="rating-slow overall-totals">Slow</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Farmington/farmington_percent.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;  margin-top: 2.25rem;"><br>
+                <img src="{% static 'images/OverallImages/Farmington/farmington_yearly.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;">
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% for name in overall_name_list %}
+        {% if name.location_name == 'Glassmans' %}
+        <h2 class="sub-head">{{ name.location_name }}</h2>
+        <div class="overall-container">
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th colspan="3" class="overall-table-head">Total and Percent Species Caught</th>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Species</th>
+                        <th class="overall-table-sub-head">Total</th>
+                        <th class="overall-table-sub-head">Percentage</th>
+                    <tr>
+                        <td>Rainbow</td>
+                        <td>6</td>
+                        <td>100%</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Glassmans/glassmans_total.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;"><br>
+                <img src="{% static 'images/OverallImages/Glassmans/glassmans_avg.png' %}" alt="" style="width: 100%; height: 470px;">
+            </div>
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th class="overall-table-sub-head">Total</th>
+                        <td class="overall-totals">6</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Number of Trips</th>
+                        <td class="overall-totals">1</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Average</th>
+                        <td class="overall-totals">6</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Rating</th>
+                        <td class="rating-slow overall-totals">Slow</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Glassmans/glassmans_percent.png' %}" alt="" style="width: 100%; margin-bottom: 2rem; margin-top: 1rem;"><br>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% for name in overall_name_list %}
+        {% if name.location_name == 'Good Ski Lake' %}
+        <h2 class="sub-head">{{ name.location_name }}</h2>
+        <div class="overall-container">
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th colspan="3" class="overall-table-head">Total and Percent Species Caught</th>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Species</th>
+                        <th class="overall-table-sub-head">Total</th>
+                        <th class="overall-table-sub-head">Percentage</th>
+                    </tr>
+                        <td>Largemouth Bass</td>
+                        <td>2</td>
+                        <td>0.66%</td>
+                    </tr>
+                    </tr>
+                        <td>Perch</td>
+                        <td>6</td>
+                        <td>1.97%</td>
+                    </tr>
+                    <tr>
+                        <td>Rainbow</td>
+                        <td>296</td>
+                        <td>97.37%</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/GoodSki/good_ski_total.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;"><br>
+                <img src="{% static 'images/OverallImages/GoodSki/good_ski_avg.png' %}" alt="" style="width: 100%; height: 470px;">
+            </div>
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th class="overall-table-sub-head">Total</th>
+                        <td class="overall-totals">304</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Number of Trips</th>
+                        <td class="overall-totals">15</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Average</th>
+                        <td class="overall-totals">20</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Rating</th>
+                        <td class="rating-average overall-totals">Average</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/GoodSki/good_ski_percent.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;  margin-top: 3.5rem;"><br>
+                <img src="{% static 'images/OverallImages/GoodSki/good_ski_yearly.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;">
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% for name in overall_name_list %}
+        {% if name.location_name == 'Hobbs' %}
+        <h2 class="sub-head">{{ name.location_name }}</h2>
+        <div class="overall-container">
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th colspan="3" class="overall-table-head">Total and Percent Species Caught</th>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Species</th>
+                        <th class="overall-table-sub-head">Total</th>
+                        <th class="overall-table-sub-head">Percentage</th>
+                    </tr>
+                        <td>Bluegill</td>
+                        <td>87</td>
+                        <td>45.08%</td>
+                    </tr>
+                    </tr>
+                        <td>Cutthroat</td>
+                        <td>57</td>
+                        <td>29.53%</td>
+                    </tr>
+                    <tr>
+                        <td>Rainbow</td>
+                        <td>49</td>
+                        <td>25.39%</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Hobbs/hobbs_total.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;"><br>
+                <img src="{% static 'images/OverallImages/Hobbs/hobbs_avg.png' %}" alt="" style="width: 100%; height: 470px;">
+            </div>
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th class="overall-table-sub-head">Total</th>
+                        <td class="overall-totals">193</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Number of Trips</th>
+                        <td class="overall-totals">26</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Average</th>
+                        <td class="overall-totals">7</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Rating</th>
+                        <td class="rating-slow overall-totals">Slow</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Hobbs/hobbs_percent.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;  margin-top: 3.5rem;"><br>
+                <img src="{% static 'images/OverallImages/Hobbs/hobbs_yearly.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;">
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% for name in overall_name_list %}
+        {% if name.location_name == 'Holmes' %}
+        <h2 class="sub-head">{{ name.location_name }}</h2>
+        <div class="overall-container">
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th colspan="3" class="overall-table-head">Total and Percent Species Caught</th>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Species</th>
+                        <th class="overall-table-sub-head">Total</th>
+                        <th class="overall-table-sub-head">Percentage</th>
+                    </tr>
+                        <td>Largemouth Bass</td>
+                        <td>1</td>
+                        <td>0.58%</td>
+                    </tr>
+                    <tr>
+                        <td>Rainbow</td>
+                        <td>172</td>
+                        <td>99.42%</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Holmes/holmes_total.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;"><br>
+                <img src="{% static 'images/OverallImages/Holmes/holmes_avg.png' %}" alt="" style="width: 100%; height: 470px;">
+            </div>
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th class="overall-table-sub-head">Total</th>
+                        <td class="overall-totals">173</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Number of Trips</th>
+                        <td class="overall-totals">27</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Average</th>
+                        <td class="overall-totals">6</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Rating</th>
+                        <td class="rating-slow overall-totals">Slow</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Holmes/holmes_percent.png' %}" alt="" style="width: 100%; margin-bottom: 2rem; margin-top: -.75rem;"><br>
+                <img src="{% static 'images/OverallImages/Holmes/holmes_yearly.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;">
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% for name in overall_name_list %}
+        {% if name.location_name == 'Ibantik' %}
+        <h2 class="sub-head">{{ name.location_name }}</h2>
+        <div class="overall-container">
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th colspan="3" class="overall-table-head">Total and Percent Species Caught</th>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Species</th>
+                        <th class="overall-table-sub-head">Total</th>
+                        <th class="overall-table-sub-head">Percentage</th>
+                    <tr>
+                        <td>Brook</td>
+                        <td>1</td>
+                        <td>100%</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Ibantik/ibantik_total.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;"><br>
+            </div>
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th class="overall-table-sub-head">Total</th>
+                        <td class="overall-totals">1</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Number of Trips</th>
+                        <td class="overall-totals">1</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Average</th>
+                        <td class="overall-totals">1</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Rating</th>
+                        <td class="rating-slow overall-totals">Slow</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Ibantik/ibantik_percent.png' %}" alt="" style="width: 100%; margin-bottom: 2rem; margin-top: .75rem;"><br>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% for name in overall_name_list %}
+        {% if name.location_name == 'Jensen' %}
+        <h2 class="sub-head">{{ name.location_name }}</h2>
+        <div class="overall-container">
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th colspan="3" class="overall-table-head">Total and Percent Species Caught</th>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Species</th>
+                        <th class="overall-table-sub-head">Total</th>
+                        <th class="overall-table-sub-head">Percentage</th>
+                    </tr>
+                        <td>Bluegill</td>
+                        <td>9</td>
+                        <td>4.07%</td>
+                    </tr>
+                    <tr>
+                        <td>Rainbow</td>
+                        <td>212</td>
+                        <td>95.93%</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Jensen/jensen_total.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;"><br>
+                <img src="{% static 'images/OverallImages/Jensen/jensen_avg.png' %}" alt="" style="width: 100%; height: 470px;">
+            </div>
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th class="overall-table-sub-head">Total</th>
+                        <td class="overall-totals">221</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Number of Trips</th>
+                        <td class="overall-totals">17</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Average</th>
+                        <td class="overall-totals">13</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Rating</th>
+                        <td class="rating-slow overall-totals">Slow</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Jensen/jensen_percent.png' %}" alt="" style="width: 100%; margin-bottom: 2rem; margin-top: 1rem;"><br>
+                <img src="{% static 'images/OverallImages/Jensen/jensen_yearly.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;">
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% for name in overall_name_list %}
+        {% if name.location_name == 'Kaysville' %}
+        <h2 class="sub-head">{{ name.location_name }}</h2>
+        <div class="overall-container">
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th colspan="3" class="overall-table-head">Total and Percent Species Caught</th>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Species</th>
+                        <th class="overall-table-sub-head">Total</th>
+                        <th class="overall-table-sub-head">Percentage</th>
+                    </tr>
+                        <td>Bluegill</td>
+                        <td>4</td>
+                        <td>0.61%</td>
+                    </tr>
+                    </tr>
+                        <td>Bullhead Catfish</td>
+                        <td>16</td>
+                        <td>2.46%</td>
+                    </tr>
+                    </tr>
+                        <td>Carp</td>
+                        <td>1</td>
+                        <td>0.15%</td>
+                    </tr>
+                    </tr>
+                        <td>Channel Catfish</td>
+                        <td>22</td>
+                        <td>3.38%</td>
+                    </tr>
+                    <tr>
+                        <td>Rainbow</td>
+                        <td>603</td>
+                        <td>92.63%</td>
+                    </tr>
+                    </tr>
+                        <td>Wiper</td>
+                        <td>5</td>
+                        <td>0.77%</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Kaysville/kaysville_total.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;"><br>
+                <img src="{% static 'images/OverallImages/Kaysville/kaysville_avg.png' %}" alt="" style="width: 100%; height: 470px;">
+            </div>
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th class="overall-table-sub-head">Total</th>
+                        <td class="overall-totals">651</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Number of Trips</th>
+                        <td class="overall-totals">52</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Average</th>
+                        <td class="overall-totals">13</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Rating</th>
+                        <td class="rating-slow overall-totals">Slow</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Kaysville/kaysville_percent.png' %}" alt="" style="width: 100%; margin-bottom: 2rem; margin-top: 8.25rem;"><br>
+                <img src="{% static 'images/OverallImages/Kaysville/kaysville_yearly.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;">
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% for name in overall_name_list %}
+        {% if name.location_name == 'Kens' %}
+        <h2 class="sub-head">{{ name.location_name }}</h2>
+        <div class="overall-container">
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th colspan="3" class="overall-table-head">Total and Percent Species Caught</th>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Species</th>
+                        <th class="overall-table-sub-head">Total</th>
+                        <th class="overall-table-sub-head">Percentage</th>
+                    </tr>
+                        <td>Bluegill</td>
+                        <td>34</td>
+                        <td>80.95%</td>
+                    </tr>
+                    </tr>
+                        <td>Largemouth Bass</td>
+                        <td>4</td>
+                        <td>9.52%</td>
+                    </tr>
+                    <tr>
+                        <td>Rainbow</td>
+                        <td>4</td>
+                        <td>9.52%</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Kens/kens_total.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;"><br>
+                <img src="{% static 'images/OverallImages/Kens/kens_avg.png' %}" alt="" style="width: 100%; height: 470px;">
+            </div>
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th class="overall-table-sub-head">Total</th>
+                        <td class="overall-totals">42</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Number of Trips</th>
+                        <td class="overall-totals">2</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Average</th>
+                        <td class="overall-totals">21</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Rating</th>
+                        <td class="rating-good overall-totals">Good</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Kens/kens_percent.png' %}" alt="" style="width: 100%; margin-bottom: 2rem; margin-top: 3.75rem;"><br>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% for name in overall_name_list %}
+        {% if name.location_name == 'Lichen' %}
+        <h2 class="sub-head">{{ name.location_name }}</h2>
+        <div class="overall-container">
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th colspan="3" class="overall-table-head">Total and Percent Species Caught</th>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Species</th>
+                        <th class="overall-table-sub-head">Total</th>
+                        <th class="overall-table-sub-head">Percentage</th>
+                    </tr>
+                        <td>True Muskie</td>
+                        <td>1</td>
+                        <td>100%</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Lichen/lichen_total.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;"><br>
+            </div>
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th class="overall-table-sub-head">Total</th>
+                        <td class="overall-totals">1</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Number of Trips</th>
+                        <td class="overall-totals">1</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Average</th>
+                        <td class="overall-totals">1</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Rating</th>
+                        <td class="rating-slow overall-totals">Slow</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Lichen/lichen_percent.png' %}" alt="" style="width: 100%; margin-bottom: 2rem; margin-top: -1.5rem;"><br>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% for name in overall_name_list %}
+        {% if name.location_name == 'Lost Creek' %}
+        <h2 class="sub-head">{{ name.location_name }}</h2>
+        <div class="overall-container">
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th colspan="3" class="overall-table-head">Total and Percent Species Caught</th>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Species</th>
+                        <th class="overall-table-sub-head">Total</th>
+                        <th class="overall-table-sub-head">Percentage</th>
+                    </tr>
+                        <td>Chub</td>
+                        <td>55</td>
+                        <td>12.09%</td>
+                    </tr>
+                    </tr>
+                        <td>Cutthroat</td>
+                        <td>184</td>
+                        <td>40.44%</td>
+                    </tr>
+                    </tr>
+                        <td>Rainbow</td>
+                        <td>199</td>
+                        <td>43.74%</td>
+                    </tr>
+                    </tr>
+                        <td>Splake</td>
+                        <td>2</td>
+                        <td>0.44%</td>
+                    </tr>
+                    <tr>
+                        <td>Tiger Trout</td>
+                        <td>15</td>
+                        <td>3.30%</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/LostCreek/lost_creek_total.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;"><br>
+                <img src="{% static 'images/OverallImages/LostCreek/lost_creek_avg.png' %}" alt="" style="width: 100%; height: 470px;">
+            </div>
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th class="overall-table-sub-head">Total</th>
+                        <td class="overall-totals">455</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Number of Trips</th>
+                        <td class="overall-totals">28</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Average</th>
+                        <td class="overall-totals">16</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Rating</th>
+                        <td class="rating-fair overall-totals">Fair</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/LostCreek/lost_creek_percent.png' %}" alt="" style="width: 100%; margin-bottom: 2rem; margin-top: 8rem;"><br>
+                <img src="{% static 'images/OverallImages/LostCreek/lost_creek_yearly.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;">
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% for name in overall_name_list %}
+        {% if name.location_name == 'Pineview' %}
+        <h2 class="sub-head">{{ name.location_name }}</h2>
+        <div class="overall-container">
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th colspan="3" class="overall-table-head">Total and Percent Species Caught</th>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Species</th>
+                        <th class="overall-table-sub-head">Total</th>
+                        <th class="overall-table-sub-head">Percentage</th>
+                    </tr>
+                        <td>Bluegill</td>
+                        <td>1</td>
+                        <td>0.12%</td>
+                    </tr>
+                    </tr>
+                        <td>Bullhead Catfish</td>
+                        <td>20</td>
+                        <td>2.44%</td>
+                    </tr>
+                    </tr>
+                        <td>Carp</td>
+                        <td>2</td>
+                        <td>0.24%</td>
+                    </tr>
+                    </tr>
+                        <td>Crappie</td>
+                        <td>483</td>
+                        <td>59.05%</td>
+                    </tr>
+                    </tr>
+                        <td>Perch</td>
+                        <td>309</td>
+                        <td>37.78%</td>
+                    </tr>
+                    <tr>
+                        <td>Tiger Muskie</td>
+                        <td>2</td>
+                        <td>0.24%</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Pineview/pineview_total.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;"><br>
+                <img src="{% static 'images/OverallImages/Pineview/pineview_avg.png' %}" alt="" style="width: 100%; height: 470px;">
+            </div>
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th class="overall-table-sub-head">Total</th>
+                        <td class="overall-totals">818</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Number of Trips</th>
+                        <td class="overall-totals">15</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Average</th>
+                        <td class="overall-totals">55</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Rating</th>
+                        <td class="rating-hot overall-totals">Hot</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Pineview/pineview_percent.png' %}" alt="" style="width: 100%; margin-bottom: 2rem; margin-top: 6.75rem;"><br>
+                <img src="{% static 'images/OverallImages/Pineview/pineview_yearly.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;">
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% for name in overall_name_list %}
+        {% if name.location_name == 'Rockport' %}
+        <h2 class="sub-head">{{ name.location_name }}</h2>
+        <div class="overall-container">
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th colspan="3" class="overall-table-head">Total and Percent Species Caught</th>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Species</th>
+                        <th class="overall-table-sub-head">Total</th>
+                        <th class="overall-table-sub-head">Percentage</th>
+                    </tr>
+                        <td>Brown</td>
+                        <td>4</td>
+                        <td>3.31%</td>
+                    </tr>
+                    </tr>
+                        <td>Rainbow</td>
+                        <td>117</td>
+                        <td>96.69%</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Rockport/rockport_total.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;"><br>
+                <img src="{% static 'images/OverallImages/Rockport/rockport_avg.png' %}" alt="" style="width: 100%; height: 470px;">
+            </div>
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th class="overall-table-sub-head">Total</th>
+                        <td class="overall-totals">121</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Number of Trips</th>
+                        <td class="overall-totals">12</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Average</th>
+                        <td class="overall-totals">10</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Rating</th>
+                        <td class="rating-slow overall-totals">Slow</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Rockport/rockport_percent.png' %}" alt="" style="width: 100%; margin-bottom: 2rem; margin-top: 2rem;"><br>
+                <img src="{% static 'images/OverallImages/Rockport/rockport_yearly.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;">
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% for name in overall_name_list %}
+        {% if name.location_name == 'Sawbill' %}
+        <h2 class="sub-head">{{ name.location_name }}</h2>
+        <div class="overall-container">
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th colspan="3" class="overall-table-head">Total and Percent Species Caught</th>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Species</th>
+                        <th class="overall-table-sub-head">Total</th>
+                        <th class="overall-table-sub-head">Percentage</th>
+                    </tr>
+                        <td>Smallmouth Bass</td>
+                        <td>14</td>
+                        <td>73.68%</td>
+                    </tr>
+                    </tr>
+                        <td>Walleye</td>
+                        <td>5</td>
+                        <td>26.32%</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Sawbill/sawbill_total.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;"><br>
+            </div>
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th class="overall-table-sub-head">Total</th>
+                        <td class="overall-totals">19</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Number of Trips</th>
+                        <td class="overall-totals">3</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Average</th>
+                        <td class="overall-totals">6</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Rating</th>
+                        <td class="rating-slow overall-totals">Slow</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Sawbill/sawbill_percent.png' %}" alt="" style="width: 100%; margin-bottom: 2rem; margin-top: 2rem;"><br>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% for name in overall_name_list %}
+        {% if name.location_name == 'Strawberry' %}
+        <h2 class="sub-head">{{ name.location_name }}</h2>
+        <div class="overall-container">
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th colspan="3" class="overall-table-head">Total and Percent Species Caught</th>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Species</th>
+                        <th class="overall-table-sub-head">Total</th>
+                        <th class="overall-table-sub-head">Percentage</th>
+                    </tr>
+                    <tr>
+                        <td>Cutthroat</td>
+                        <td>3482</td>
+                        <td>97.67%</td>
+                    </tr>
+                    <tr>
+                        <td>Kokanee</td>
+                        <td>23</td>
+                        <td>0.65%</td>
+                    </tr>
+                    <tr>
+                        <td>Rainbow</td>
+                        <td>60</td>
+                        <td>1.68%</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Strawberry/strawberry_total.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;"><br>
+                <img src="{% static 'images/OverallImages/Strawberry/strawberry_avg.png' %}" alt="" style="width: 100%; height: 470px;">
+            </div>
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th class="overall-table-sub-head">Total</th>
+                        <td class="overall-totals">3565</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Number of Trips</th>
+                        <td class="overall-totals">82</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Average</th>
+                        <td class="overall-totals">43</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Rating</th>
+                        <td class="rating-hot overall-totals">Hot</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Strawberry/strawberry_percent.png' %}" alt="" style="width: 100%; margin-bottom: 2rem; margin-top: 3.5rem;"><br>
+                <img src="{% static 'images/OverallImages/Strawberry/strawberry_yearly.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;">
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% for name in overall_name_list %}
+        {% if name.location_name == 'Lake Superior' %}
+        <h2 class="sub-head">{{ name.location_name }}</h2>
+        <div class="overall-container">
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th colspan="3" class="overall-table-head">Total and Percent Species Caught</th>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Species</th>
+                        <th class="overall-table-sub-head">Total</th>
+                        <th class="overall-table-sub-head">Percentage</th>
+                    </tr>
+                        <td>Coho</td>
+                        <td>1</td>
+                        <td>33.33%</td>
+                    </tr>
+                    </tr>
+                        <td>Lake Trout</td>
+                        <td>2</td>
+                        <td>66.67%</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Superior/superior_total.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;"><br>
+            </div>
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th class="overall-table-sub-head">Total</th>
+                        <td class="overall-totals">3</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Number of Trips</th>
+                        <td class="overall-totals">1</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Average</th>
+                        <td class="overall-totals">3</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Rating</th>
+                        <td class="rating-slow overall-totals">Slow</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Superior/superior_percent.png' %}" alt="" style="width: 100%; margin-bottom: 2rem; margin-top: 2rem;"><br>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% for name in overall_name_list %}
+        {% if name.location_name == 'Tropic' %}
+        <h2 class="sub-head">{{ name.location_name }}</h2>
+        <div class="overall-container">
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th colspan="3" class="overall-table-head">Total and Percent Species Caught</th>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Species</th>
+                        <th class="overall-table-sub-head">Total</th>
+                        <th class="overall-table-sub-head">Percentage</th>
+                    </tr>
+                    </tr>
+                        <td>Rainbow</td>
+                        <td>1</td>
+                        <td>100%</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Tropic/tropic_total.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;"><br>
+                <img src="{% static 'images/OverallImages/Tropic/tropic_avg.png' %}" alt="" style="width: 100%; height: 470px;">
+            </div>
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th class="overall-table-sub-head">Total</th>
+                        <td class="overall-totals">1</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Number of Trips</th>
+                        <td class="overall-totals">1</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Average</th>
+                        <td class="overall-totals">1</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Rating</th>
+                        <td class="rating-slow overall-totals">Slow</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Tropic/tropic_percent.png' %}" alt="" style="width: 100%; margin-bottom: 2rem; margin-top: 1rem;"><br>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% for name in overall_name_list %}
+        {% if name.location_name == 'Willard' %}
+        <h2 class="sub-head">{{ name.location_name }}</h2>
+        <div class="overall-container">
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th colspan="3" class="overall-table-head">Total and Percent Species Caught</th>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Species</th>
+                        <th class="overall-table-sub-head">Total</th>
+                        <th class="overall-table-sub-head">Percentage</th>
+                    </tr>
+                    <tr>
+                        <td>Channel Catfish</td>
+                        <td>1</td>
+                        <td>33.33%</td>
+                    </tr>
+                    <tr>
+                        <td>Crappie</td>
+                        <td>1</td>
+                        <td>33.33%</td>
+                    </tr>
+                    <tr>
+                        <td>Smallmouth Bass</td>
+                        <td>1</td>
+                        <td>33.33%</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Willard/willard_total.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;"><br>
+                <img src="{% static 'images/OverallImages/Willard/willard_avg.png' %}" alt="" style="width: 100%; height: 470px;">
+            </div>
+            <div class="lake-col">
+                <table class="overall-tables">
+                    <tr>
+                        <th class="overall-table-sub-head">Total</th>
+                        <td class="overall-totals">3</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Number of Trips</th>
+                        <td class="overall-totals">3</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Average</th>
+                        <td class="overall-totals">1</td>
+                    </tr>
+                    <tr>
+                        <th class="overall-table-sub-head">Rating</th>
+                        <td class="rating-slow overall-totals">Slow</td>
+                    </tr>
+                </table>
+                <img src="{% static 'images/OverallImages/Willard/willard_percent.png' %}" alt="" style="width: 100%; margin-bottom: 2rem; margin-top: .2rem;"><br>
+                <img src="{% static 'images/OverallImages/Willard/willard_yearly.png' %}" alt="" style="width: 100%; margin-bottom: 2rem;">
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        <div class="overall-pagination">
+            {% if overall_name_list.has_previous %}
+            <a class="page-links" href="?page={{ overall_name_list.previous_page_number }}">&laquo;</a>
+            {% endif %}
+            <a class="page-links" href="?page=1">1</a>
+            <a class="page-links" href="?page=2">2</a>
+            <a class="page-links" href="?page=3">3</a>
+            <a class="page-links" href="?page=4">4</a>
+            <a class="page-links" href="?page=5">5</a>
+            {% if overall_name_list.has_next %}
+            <a class="page-links" href="?page={{ overall_name_list.next_page_number }}">&raquo;</a>
+            {% endif %}
+        </div>
+    {% endblock %}
+</body>
+</html>

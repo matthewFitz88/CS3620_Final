@@ -1,0 +1,224 @@
+{% extends 'fitzfishing/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | FitzFishing</title>
+</head>
+<body>
+    {% block body %}
+        <h1 class="main-head">About</h1>
+        <hr class="about-line">
+        <img class="about-img" src="{% static 'images/adams_wiper.jpg' %}" alt="">
+        <div class="about-info-container">
+            <div class="about-info">
+                <p class="about-page-text">
+                    Hi, my name is Matthew Fitzgerald. I am currently going to college at Weber
+                    State University majoring in Web Design and User Experience. I am almost
+                    done with my degree as I am on track to graduate in Spring of 2023.   
+                </p>
+                <p class="about-page-text">
+                    As you probably already know, I am a serious fisherman. It is my favorite
+                    hobby and pastime. I have been fishing avidly for over a 10 year and over
+                    those ten years I have caught thousands of fish and have gained a lot of
+                    knowledge about fishing and how to catch fish, especially Trout.
+                </p>
+                <p class="about-page-text">
+                    While Trout are my area of experitse when it comes to fishing, a Trout is not
+                    actually my favorite fish. My favorite fish is a Tiger Muskie, some reasons
+                    for this are because they are a very tough fish to catch so there's always
+                    a big challenge when targeting, and that no matter how big or small they
+                    are they will always put up a good fight and they are always extremely
+                    rewarding to catch.
+                </p>
+                <p class="about-page-text">
+                    This website is site that I put all my fishing data that I gather from every
+                    fishing trip that I go on that is now also availible to you as well. All data
+                    on this site is from 2017 to 2021. However, there will be no data for 2017
+                    specifically because there is not a whole years worth of data. I hope that
+                    you are able to find the information on this site useful and that it might
+                    help you during your next fishing trip.  
+                </p>
+            </div>
+        </div>
+        <div class="about-table-container">
+            <table class="about-table">
+                <thead>
+                    <tr>
+                        <th colspan="3" class="main-table-head">My 10 Favorite Fish and Lakes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Fish</th>
+                        <th>Lake/Pond</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Tiger Muskie</td>
+                        <td>Strawberry Reservoir</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Wiper</td>
+                        <td>Lost Creek Reservoir</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Cutthroat Trout</td>
+                        <td>Adams Reservoir</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Kokanee Salmon</td>
+                        <td>Pineview Reservoir</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Rainbow Trout</td>
+                        <td>Kaysville Ponds</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Channel Catfish</td>
+                        <td>East Canyon Reservoir</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Tiger Trout</td>
+                        <td>Jensen Nature Park Pond</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Smallmouth Bass</td>
+                        <td>Good Ski Lake</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Crappie</td>
+                        <td>Holmes Reservoir</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Splake</td>
+                        <td>Rockport Reservoir</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h2 class="sub-head">10 Biggest Fish</h2>
+        <div class="biggest-fish-container">
+            <div class="biggestFish">
+                <img src="{% static 'images/biggestFish/48in_muskie.jpg' %}" alt="" style="width: 100%;">
+                <div class="biggest-fish-text">
+                    <p class="biggest-text">
+                        48" Tiger Muskie caught August 31, 2014 at Pineview Reservoir on a 2" Crappie swimbait.
+                    </p>
+                </div>
+            </div>
+            <div class="biggestFish">
+                <img src="{% static 'images/biggestFish/42in_muskie.jpg' %}" alt="" style="width: 100%; height: 675px;">
+                <div class="biggest-fish-text">
+                    <p class="biggest-text">
+                        42" Tiger Muskie caught June 26, 2011 at Pineview Reservoir on a clear white jerkbait.
+                    </p>
+                </div>
+            </div>
+            <div class="biggestFish">
+                <img src="{% static 'images/biggestFish/Muskie6.jpg' %}" alt="" style="width: 100%; height: 675px;">
+                <div class="biggest-fish-text">
+                    <p class="biggest-text">
+                        42" Tiger Muskie caught August 8, 2017 at Pineview Reservoir on a 4" Bass colored swimbait.
+                    </p>
+                </div>
+            </div>
+            <div class="biggestFish">
+                <img src="{% static 'images/biggestFish/36in_Muskie3.jpg' %}" alt="" style="width: 100%;">
+                <div class="biggest-fish-text">
+                    <p class="biggest-text">
+                        36" Tiger Muskie caught August 21, 2019 at Pineview Reservoir on a 6" swimbait.
+                    </p>
+                </div>
+            </div>
+            <div class="biggestFish">
+                <img src="{% static 'images/biggestFish/36in_Muskie2.jpg' %}" alt="" style="width: 100%;">
+                <div class="biggest-fish-text">
+                    <p class="biggest-text">
+                        36" Tiger Muskie caught August 31, 2017 at Pineview Reservoir on a 4" swimbait.
+                    </p>
+                </div>
+            </div>
+            <div class="biggestFish">
+                <img src="{% static 'images/biggestFish/36in_Muskie.jpg' %}" alt="" style="width: 100%;">
+                <div class="biggest-fish-text">
+                    <p class="biggest-text">
+                        36" Tiger Muskie caught August 14, 2014 at Pineview Reservoir on a 4" swimbait.
+                    </p>
+                </div>
+            </div>
+            <div class="biggestFish">
+                <img src="{% static 'images/biggestFish/33in_muskie.jpg' %}" alt="" style="width: 100%;">
+                <div class="biggest-fish-text">
+                    <p class="biggest-text">
+                        33" Tiger Muskie caught August 22, 2019 at Pineview Reservoir on a 6" swimbait.
+                    </p>
+                </div>
+            </div>
+            <div class="biggestFish">
+                <img src="{% static 'images/biggestFish/8lb_cutt.jpeg' %}" alt="" style="width: 100%;">
+                <div class="biggest-fish-text">
+                    <p class="biggest-text">
+                        28" 8lb. 5oz. Cutthroat caught on a white tube jig at Strawberry. Missing the Utah state record by just 3.5".
+                    </p>
+                </div>
+            </div>
+            <div class="biggestFish">
+                <img src="{% static 'images/biggestFish/7lb_laker.jpg' %}" alt="" style="width: 50%; height: 675px; display: block; margin-left: auto; margin-right: auto;">
+                <div class="biggest-fish-text">
+                    <p class="biggest-text">
+                        26" 7lb. Lake Trout caught trolling on Lake Superior in Northern Minnesota.
+                    </p>
+                </div>
+            </div>
+            <div class="biggestFish">
+                <img src="{% static 'images/6lb_cutt.jpg' %}" alt="" style="width: 85%; height: 675px; display: block; margin-left: auto; margin-right: auto;">
+                <div class="biggest-fish-text">
+                    <p class="biggest-text">
+                        25" 6lb. Cutthroat caught on a white tube jig at Lost Creek.
+                    </p>
+                </div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>
+
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              let i;
+              let slides = document.getElementsByClassName("biggestFish");
+              if (n > slides.length) {slideIndex = 1}    
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+              }
+              slides[slideIndex-1].style.display = "block";
+            }
+            </script>
+    {% endblock %}
+</body>
+</html>

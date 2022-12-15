@@ -1,0 +1,97 @@
+{% extends 'fitzfishing/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | FitzFishing</title>
+</head>
+<body>
+    {% block body %}
+        <h1 class="main-head">FitzFishing</h1>
+        <hr class="home-line">
+        <h2 class="sub-head">Most Recent Report</h2>
+        {% for recent in most_recent %}
+        <div class="most-recent-container">
+            <div class="most-recent-col border">
+                <img src="{{ recent.report_image }}" alt="" style="width: 720px; height: 340px;">
+                <h3 class="recent-head">{{ recent.location_name }}</h3>
+                <h4 class="info-head">Conditions</h4>
+                <p class="info-text"><strong>Sky: </strong>{{ recent.sky }}</p>
+                <p class="info-text"><strong>Tempurature: </strong>{{ recent.temp }}</p>
+                <p class="info-text"><strong>Water Tempurature: </strong>{{ recent.water_temp }}</p>
+                <h4 class="info-head">Best Lures/Bait</h4>
+                <p class="info-text"><strong>Best Lures/Bait: </strong>{{ recent.lures }}</p>
+            </div>
+            <div class="most-recent-col2">
+                <h3 class="recent-head">Statistics</h3>
+                <p class="info-text"><strong>Fish Caught: </strong>{{ recent.fish_caught }}</p>
+                <p class="info-text"><strong>Species Caught: </strong>{{ recent.species_caught }}</p>
+                <p class="info-text"><strong>Hours Fished: </strong>{{ recent.hours_fished }}</p>
+            </div>
+        </div>
+        <br>
+        {% endfor %}
+        <button class="view-more"><a class="view-more-text" href="{% url 'current_reports' %}">View More Reports</a></button>
+        <h2 class="sub-head separator">Top Lakes of November</h2>
+        {% for month in month_list %}
+        <div class="best-container">
+            <h3 class="best-lake-head center-text">{{ month.location_name }}</h3>
+            <img src="{{ month.top_image }}" alt="" style="width: 960px; height: 450px;">
+            <h3 class="best-lake-head">Statistics</h3>
+            <hr class="best-line">
+            <p class="info-text"><strong>Fish Caught: </strong>{{ month.fish_caught }}</p>
+            <p class="info-text"><strong>Species Caught: </strong>{{ month.species_caught }}</p>
+            <p class="info-text"><strong>Number of Trips: </strong>{{ month.trips }}</p>
+            <p class="info-text"><strong>Average: </strong>{{ month.average }}</p>
+        </div>
+        {% endfor %}
+        <h2 class="sub-head separator">Top Lakes of Fall</h2>
+        {% for season in season_list %}
+        <div class="best-container">
+            <h3 class="best-lake-head center-text">{{ season.location_name }}</h3>
+            <img src="{{ season.top_image }}" alt="" style="width: 960px; height: 450px;">
+            <h3 class="best-lake-head">Statistics</h3>
+            <hr class="best-line">
+            <p class="info-text"><strong>Fish Caught: </strong>{{ season.fish_caught }}</p>
+            <p class="info-text"><strong>Species Caught: </strong>{{ season.species_caught }}</p>
+            <p class="info-text"><strong>Number of Trips: </strong>{{ season.trips }}</p>
+            <p class="info-text"><strong>Average: </strong>{{ season.average }}</p>
+        </div>
+        {% endfor %}
+        <div class="yearly-container">
+            <h2 class="sub-head yearly-head">Yearly Reports</h2>
+            <img src="{% static 'images/biggestFish/8lb_cutt.jpeg' %}" alt="" style="width: 1000px; height: 400px; padding-left: 5rem">
+            <p class="yearly-text-home">
+                See all our fishing data broken into years for all lakes that we have fished.
+                As well as see tips on how we caught fish at these lakes during that year, so
+                you are better prepared for your next trip.
+            </p>
+            <button class="view-more yearly-link"><a class="view-more-text" href="{% url 'yearly_reports' %}">View Yearly Reports</a></button>
+        </div>
+        <div class="yearly-container">
+            <h2 class="sub-head yearly-head">Overall Statistics</h2>
+            <img src="{% static 'images/biggestFish/48in_muskie.jpg' %}" alt="" style="width: 1000px; height: 400px; padding-left: 5rem">
+            <p class="yearly-text-home">
+                See all our data put together for all lakes that we have fished over the years.
+            </p>
+            <button class="view-more yearly-link"><a class="view-more-text" href="{% url 'overall_stats' %}">View Overall Statistics</a></button>
+        </div>
+        <div class="about-container">
+            <h2 class="sub-head about-head">About</h2>
+            <div class="about-col">
+                <p class="about-text">
+                    Learn more about the creator of this site, Matthew Fitzgerald, and his background in fishing
+                    and other things. Also read more information about the FitzFishing site.
+                </p>
+                <button class="view-more about-link"><a class="view-more-text" href="{% url 'about' %}">Read More</a></button>
+            </div>
+            <div class="about-col">
+                <img src="{% static 'images/6lb_cutt.jpg' %}" alt="" style="width: 550px; height: 550px; border-radius: 50%;">
+            </div>
+        </div>
+    {% endblock %}
+</body>
+</html>

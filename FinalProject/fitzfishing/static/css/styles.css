@@ -1,0 +1,903 @@
+html {
+    background-color: #010440;
+    font-size: 20px;
+    font-family: 'Quicksand', sans-serif;
+    color: #FFFFFF;
+}
+
+nav {
+    background-color: #142615;
+    height: 2.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-items > .nav-link {
+    text-decoration: none;
+    padding: .6rem 1rem;
+    color: #FFFFFF;
+}
+
+.nav-items > .nav-border, .border {
+    border-right: 1px solid #8ABFA6;
+}
+
+.nav-items > .nav-link:hover {
+    background-color: #8ABFA6;
+    color: #000000;
+}
+
+.nav-link:visited, .view-more-text:visited {
+    color: #FFFFFF;
+}
+
+.main-head {
+   font-size: 3.5rem;
+   font-family: 'Libre Baskerville', serif;
+   text-align: center;
+   margin-bottom: 0;
+}
+
+.sub-head {
+    font-size: 2.25rem;
+    font-family: 'Libre Baskerville', serif;
+    text-align: center;
+}
+
+.separator {
+    padding-top: 2.5rem;
+}
+
+hr {
+    height: 2px;
+    border-width: 0;
+    background-color: #8ABFA6;
+}
+
+table, th, td {
+    text-align: center;
+    border: 1px solid #142615;
+    border-collapse: collapse;
+    padding: .5rem;
+}
+
+th {
+    background-color: #000006;
+    font-size: 1.25rem;
+    font-family: 'Libre Baskerville', serif;
+    width: 250px;
+}
+
+td {
+    background-color: #A1A8A1;
+    font-size: .9rem;
+    padding: .25rem;
+}
+
+/* HOME STYLES */
+.home-line {
+    width: 212px;
+    margin-bottom: 5rem;
+}
+
+.most-recent-container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #59733F;
+    width: 960px;
+    height: 775px;
+}
+
+.most-recent-col {
+    float: left;
+    width: 75%;
+}
+
+.most-recent-col2 {
+    float: right;
+    width: 24%;
+}
+
+.recent-head, .best-lake-head {
+    font-size: 1.75rem;
+    font-family: 'Libre Baskerville', serif;
+    color: #000000;
+    padding-left: 1rem;
+    margin-bottom: 0;
+}
+
+.info-head {
+    color: #C6D984;
+    font-size: 1.25rem;
+    font-family: 'Libre Baskerville', serif;
+    padding-left: 1rem;
+}
+
+.info-text {
+    font-size: .9rem;
+    padding-left: 1rem;
+}
+
+.view-more {
+    background-color: #95A363;
+    border-radius: 1.25rem;
+    font-size: 1.25rem;
+    text-align: center;
+    margin-left: 460px;
+    margin-top: 1rem;
+    width: 270px;
+    height: 50px;
+}
+
+.view-more-text {
+    text-decoration: none;
+}
+
+.view-more:hover {
+    background-color: #C6D984;
+}
+
+.view-more-text:hover {
+    color: #000000;
+}
+
+.best-container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #59733F;
+    width: 960px;
+    height: 800px;
+}
+
+.center-text {
+    text-align: center;
+    padding-left: 0;
+    padding-top: 1rem;
+}
+
+.best-line {
+    width: 335px;
+    margin-left: 1rem;
+}
+
+.yearly-container, .about-container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    background-color: #142615;
+    width: 1200px;
+    height: 750px;
+}
+
+.yearly-head, .about-head {
+    padding-top: 1rem;
+}
+
+.about-text, .yearly-text-home {
+    font-size: .9rem;
+    padding-left: 1rem;
+    width: 50%;
+    text-indent: 2rem;
+}
+
+.yearly-link {
+    margin-left: 1rem;
+}
+
+.about-col {
+    float: left;
+    width: 50%;
+}
+
+.about-container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.about-text {
+    width: 100%;
+}
+
+.about-link {
+    width: 175px;
+    margin-left: 1rem;
+}
+
+/* CURRENT REPORTS STYLES */
+.current-line {
+    width: 286px;
+    margin-bottom: 5rem;
+}
+
+/* YEARLY REPORTS STYLES */
+.yearly-line {
+    width: 268px;
+    margin-bottom: 5rem;
+}
+
+.yearly-reports-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+}
+
+.general-info {
+    background-color: #59733F;
+    width: 1000px;
+    height: 1375px;
+    margin-left: 7.5rem;
+}
+
+.general-head {
+    text-align: left;
+    color: #000000;
+    padding-left: 1rem;
+}
+
+.yearly-text {
+    width: 95%;
+    padding: 1rem;
+    text-indent: 2rem;
+}
+
+.yearly-list {
+    margin-left: 1rem;
+}
+
+.quick-nav {
+    background-color: #142615;
+    width: 500px;
+    height: 1100px;
+    margin-right: 7.5rem;
+}
+
+.quick-nav-links, .year-nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.quick-link, .year-link {
+    background-color: #95A363;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.4rem;
+    padding: .5rem;
+    margin: 1rem;
+    width: 150px;
+}
+
+.quick-link {
+    width: 175px;
+}
+
+.quick-link:hover, .year-link:hover, .location-link:hover {
+    background-color: #C6D984;
+    color: #000000;
+}
+
+.year-link {
+    font-size: 1.75rem;
+    width: 200px;
+}
+
+.bar-num {
+    margin: 0;
+}
+
+.month-projections {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1350px;
+}
+
+.months {
+    float: left;
+    width: 16.66%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.month-bar1 {
+    border: 1px solid #000000;
+    background-color: #B9BEB9;
+    width: 200px;
+    margin-bottom: 2rem;
+}
+
+.month-bar2 {
+    height: 1.25rem;
+    background-color: #377B3A;
+}
+
+.month-projection {
+    margin: 0;
+    margin-left: 80%;
+    color: #D3D3D3;
+    font-size: .75rem;
+}
+
+.jan-bar {
+    width: 78.65%;
+}
+
+.feb-bar {
+    width: 95.16%;
+}
+
+.march-bar {
+    width: 99.21%;
+}
+
+.april-bar {
+    width: 100%;
+}
+
+.may-bar {
+    width: 37.63%;
+}
+
+.june-bar {
+    width: 91.18%;
+}
+
+.july-bar {
+    width: 100%;
+}
+
+.august-bar {
+    width: 100%;
+}
+
+.sept-bar {
+    width: 25%;
+}
+
+.octo-bar {
+    width: 62.77%;
+}
+
+.nov-bar {
+    width: 11.76%;
+}
+
+.dec-bar {
+    width: 0%;
+}
+
+.jan-num {
+    margin-left: 85%;
+}
+
+.feb-num {
+    margin-left: 85%;
+}
+
+.march-num {
+    margin-left: 85%;
+}
+
+.april-num {
+    margin-left: 86%;
+}
+
+.may-num {
+    margin-left: 69%;
+}
+
+.june-num {
+    margin-left: 80%;
+}
+
+.july-num, .august-num {
+    margin-left: 83%;
+}
+
+.sept-num {
+    margin-left: 50%;
+}
+
+.octo-num {
+    margin-left: 75%;
+}
+
+.nov-num {
+    margin-left: 10%;
+}
+
+.season-bar1 {
+    border: 1px solid #000000;
+    background-color: #B9BEB9;
+    width: 650px;
+    margin-bottom: 2rem;
+}
+
+.season-bar2 {
+    height: 1.25rem;
+    background-color: #377B3A;
+}
+
+.spring-bar {
+    width: 95.48%;
+}
+
+.summer-bar {
+    width: 100%;
+}
+
+.fall-bar {
+    width: 32.7%;
+}
+
+.winter-bar {
+    width: 100%;
+}
+
+.spring-num, .summer-num {
+    margin-left: 94%;
+}
+
+.fall-num {
+    margin-left: 83%;
+}
+
+.winter-num {
+    margin-left: 95%;
+}
+
+.spring-fall, .summer-winter {
+    float: left;
+    width: 50%;
+    margin-bottom: 2rem;
+}
+
+.season-projections {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1350px;
+}
+
+.season-projection {
+    margin: 0;
+    margin-left: 93%;
+    color: #D3D3D3;
+    font-size: .75rem;
+}
+
+.year-projections {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1350px;
+}
+
+.year-bar1 {
+    border: 1px solid #000000;
+    background-color: #B9BEB9;
+}
+
+.year-bar2 {
+    height: 1.25rem;
+    background-color: #377B3A;
+    width: 92.41%;
+}
+
+.year-name, .season-name, .month-name {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.year-projection {
+    margin: 0;
+    margin-left: 97.75%;
+    color: #D3D3D3;
+    font-size: .75rem;
+}
+
+.year-num {
+    margin-left: 96%;
+}
+
+/* ABOUT STYLES */
+.about-line {
+    width: 114px;
+    margin-bottom: 5rem;
+}
+
+.about-img {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+}
+
+.about-info-container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5rem;
+    width: 960px;
+}
+
+.about-page-text {
+    text-indent: 2rem;
+}
+
+.about-table-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+.about-table {
+    width: 750px;
+}
+
+.main-table-head {
+    font-size: 2rem;
+}
+
+.biggestFish {
+    display: none;
+}
+
+.biggest-fish-container {
+    max-width: 1200px;
+    position: relative;
+    margin: auto;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: .75rem;
+    margin-top: -1.1rem;
+    color: #FFFFFF;
+    font-weight: bold;
+    transition: 0.6s ease;
+    border-radius: 0 .25rem;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: .25rem 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.biggest-text {
+    background-color: #000006;
+    padding: 1rem;
+    margin: 0;
+}
+
+/* 2018 STYLES */
+.line-2018 {
+    width: 111px;
+    margin-bottom: 5rem;
+}
+
+.best-catches-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.general-stats-head {
+    margin-top: 5rem;
+}
+
+.year-stats-container {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.year-tables, .overall-tables {
+    margin-bottom: 2rem;
+}
+
+.year-table-head, .stats-table-head, .overall-table-head {
+    font-size: 2rem;
+}
+
+.year-table-sub-head, .overall-table-sub-head {
+    font-size: 1.25rem;
+}
+
+.rating-table {
+    width: 100%;
+    margin-bottom: 1.25rem;
+}
+
+.location-container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #142615;
+    width: 775px;
+}
+
+.locations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.location-link {
+    background-color: #95A363;
+    color: #FFFFFF;
+    width: 175px;
+    text-align: center;
+    font-size: 1.4rem;
+    padding: 1rem;
+    margin: 1rem;
+    text-decoration: none;
+}
+
+/* LAKE STYLES */
+.adams-line {
+    width: 365px;
+    margin-bottom: 5rem;
+}
+
+.east-canyon-line {
+    width: 468px;
+    margin-bottom: 5rem;
+}
+
+.hobbs-line {
+    width: 355px;
+    margin-bottom: 5rem;
+}
+
+.holmes-line {
+    width: 381px;
+    margin-bottom: 5rem;
+}
+
+.jensen-line {
+    width: 358px;
+    margin-bottom: 5rem;
+}
+
+.kaysville-line {
+    width: 399px;
+    margin-bottom: 5rem;
+}
+
+.kens-line {
+    width: 325px;
+    margin-bottom: 5rem;
+}
+
+.lost-creek-line {
+    width: 432px;
+    margin-bottom: 5rem;
+}
+
+.pineview-line {
+    width: 402px;
+    margin-bottom: 5rem;
+}
+
+.rockport-line {
+    width: 407px;
+    margin-bottom: 5rem;
+}
+
+.strawberry-line {
+    width: 440px;
+    margin-bottom: 5rem;
+}
+
+.willard-line {
+    width: 375px;
+    margin-bottom: 5rem;
+}
+
+.lake-table-container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    width: 93.75%;
+}
+
+.lake-table {
+    width: 100%;
+}
+
+.lake-table-head {
+    font-size: 1.25rem;
+}
+
+.total-rows {
+    font-weight: bold;
+}
+
+.total-rows-name {
+    font-family: 'Libre Baskerville', serif;
+    text-align: left;
+    padding-left: .5rem;
+}
+
+.name-col {
+    text-align: left;
+    padding-left: .5rem;
+}
+
+.rating-slow {
+    color: lightblue;
+}
+
+.rating-fair {
+    color: yellow;
+}
+
+.rating-average {
+    color: blue;
+}
+
+.rating-good {
+    color: green;
+}
+
+.rating-hot {
+    color: red;
+}
+
+.lake-stats-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lake-stats-col {
+    margin: 0 2.75rem;
+}
+
+.lake-table-row:nth-child(odd) {
+    background-color: #000006;
+}
+
+.lake-table-row:nth-child(even) {
+    background-color: #A1A8A1;
+}
+
+/* OVERALL STATS */
+.overall-line {
+    width: 310px;
+    margin-bottom: 5rem;
+}
+
+form {
+    display: flex;
+    justify-content: flex-end;
+}
+
+form > input {
+    padding: .5rem;
+    margin-top: 1rem;
+    border: 1px solid #A1A8A1;
+    width: 15%;
+    height: 25px;
+    background-color: #FFFFFF;
+}
+
+.search-button {
+    padding: .5rem;
+    margin-top: 1rem;
+    margin-right: 0;
+    border: 1px solid #377B3A;
+    background-color: #377B3A;
+    color: white;
+}
+
+.search-button:hover {
+    cursor: pointer;
+    background-color: #8ABFA6;
+}
+
+.overall-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.overall-totals {
+    width: 250px;
+}
+
+.overall-pagination {
+    display: flex;
+    justify-content: center;
+    width: 750px;
+    background-color: #142615;
+    margin: -3rem auto 2rem;
+    padding: .5rem;
+}
+
+.page-links {
+    color: #000000;
+    background-color: #C6D984;
+    font-size: 1.25rem;
+    text-decoration: none;
+    padding: .5rem 1rem;
+    margin: 1rem;
+}
+
+.active-page {
+    background-color: #8ABFA6;
+}
+
+.page-links:hover {
+    background-color: #8ABFA6;
+}
+
+.page-links:visited {
+    color: #000000;
+}
+
+/* FOOTER STYLES */
+footer {
+    background-color: #142615;
+    padding: 1rem;
+    margin: 2rem 0;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-head {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.75rem;
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+.other-links-line {
+    width: 115px;
+}
+
+.navigation-line {
+    width: 106px;
+}
+
+.footer-link {
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.footer-link a:visited {
+    color: #FFFFFF;
+} 
+
+.posted-by {
+    font-size: .75rem;
+    margin-top: 5rem;
+    margin-bottom: 0;
+    padding: 0;
+}
